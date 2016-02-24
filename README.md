@@ -20,7 +20,7 @@
 2. 需要对上百辆车辆进行依次查询 
 3. 在查询过程中，需要识别和输入公共服务网站提供的动态识别码（captcha code）
 4. 查询的数据源属于公共服务网站，违章查询需要不断地重复完成上百台车辆的数百个查询参数的录入
-５．工作效率低，花费时间较长
+5. 工作效率低，花费时间较长
 
 ####涉及到的技术点（包）:
 1. revel web framework (github.com/revel/revel, github.com/revel/modules,github.com/revel/cmd)
