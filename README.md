@@ -25,29 +25,29 @@ if you need customize some existing golang code to realize your requirement
 
 
 ####Test&Run Package
- 1. get revel web framework code
+* get revel web framework code
 ```
 go get github.com/revel/revel
 go get github.com/revel/cmd/revel
 go get github.com/revel/samples (options)
 ```
-2. get go-httpclient code
+* get go-httpclient code
 ```
 go get github.com/ddliu/go-httpclient
 ```
 
-3. run traffic violation query
+* run traffic violation query
 ```
 revel run github.com/zkocde/TrafficViolation
 ```
 
-4. open brower, input access address
+* open brower, input access address
 ```
 http://localhost:9000
 ```
 
 ####key information
-1. basic truck information used for query string batch input 
+* basic truck information used for query string batch input 
 location: 
 	github.com/zkcode/TrafficViolation/data/trucks.csv
 
@@ -56,11 +56,11 @@ data structure:
 	A69991,01,LGAGDKVF053014530,440008111023,EQB2102069346179,主车
 	AC2020,01,LFWNDULD461F05985,440008156039,CA6DE22201163022,主车
 
-2. main reference web server for traffic violation query
+* main reference web server for traffic violation query
 location:
 	http://210.76.69.58/wfcx/query.jsp
 
-3. web http communication
+* web http communication
 file:
 	github.com/zkcode/TrafficViolation/data/getImageCookies.txt
 purpose:
@@ -73,16 +73,16 @@ purpose:
 	used for parsing communication information when directly connect public service web
 	capture the cookies information when access query.jsp page on public service web
 
-####Notes:
-**current code is**
-1. good for learning purpose
-2. really runnable
-3. still can be extenable and optimized
+> ####Notes:
+> **current code is**
+> 1. good for learning purpose
+> 2. really runnable
+> 3. still can be extenable and optimized
 
-**curernt code is not**
-1. contain more features like query results export etc.
-2. edit and manage truck information by GUI
-3. etc...
+>**curernt code is not**
+> 1. contain more features like query results export etc.
+> 2. edit and manage truck information by GUI
+> 3. etc...
 
 中文描述
 -------
@@ -106,7 +106,7 @@ purpose:
 3. jquery,bootstrap,jqClock,json,html,JavaScript
 
 ####软件包测试和运行
-1. 获取revel web框架的代码
+ 1. 获取revel web框架的代码
  	
 ```
 go get github.com/revel/revel
@@ -150,13 +150,13 @@ go get github.com/revel/samples (options)
 		用于解析直接访问公共服务网站时的通讯信息（测试使用，删除对本应用无影响）
 		捕捉第一次访问query.jsp页面时返回的cookies信息
 
-####备注
-**当前代码的确可以**
-1. 用于学习目的
-2. 真实可运行
-3. 根据需要被扩展和优化
+> ####备注
+> **当前代码的确可以**
+> 1. 用于学习目的
+> 2. 真实可运行
+> 3. 根据需要被扩展和优化
 
-**当前代码的确没有***
-1. 包含更多的特性，例如查询结果的导出
-2. 通过前段界面完成被查询车辆信息的编辑
-3. 等等...
+> **当前代码的确没有***
+> 1. 包含更多的特性，例如查询结果的导出
+> 2. 通过前段界面完成被查询车辆信息的编辑
+> 3. 等等...
