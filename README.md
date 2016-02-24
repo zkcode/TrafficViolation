@@ -3,7 +3,7 @@
 #Traffic Violation Query
 Traffic Violation Query implemented with golang and revel 
 
-[english]: English Description
+[english]: https://github.com/zkcode/TrafficViolation/blob/master/README.md "English Description"
 ----------------------------
 
 ####Audience
@@ -89,7 +89,7 @@ http://localhost:9000
 #交通违章查询
 用golang和revel框架实现的交通违章查询应用 
 
-[chinese]: 中文描述
+[chinese]: https://github.com/zkcode/TrafficViolation/blob/master/README.md "中文描述"
 ----------------
 ####适用者
 如果你需要一个功能有限但可执行的代码，用于go语言和web框架的学习
