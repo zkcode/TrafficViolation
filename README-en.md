@@ -1,3 +1,7 @@
+[中文][chinese] 
+
+[chinese]: https://github.com/zkcode/TrafficViolation/blob/master/README.md
+
 #Traffic Violation Query
 Traffic Violation Query implemented with golang and revel 
 
@@ -6,7 +10,9 @@ English Description
 
 ####Audience
 if you need a sample with limited but runnable features to practice knowledge on GoLang and web framework
+
 or
+
 if you need customize some existing golang code to realize your requirement 
 
 **That is it! :sparkles:**
