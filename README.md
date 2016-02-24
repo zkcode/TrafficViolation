@@ -1,4 +1,7 @@
-#Traffic Violation
+English      中文
+=======      ===
+
+#Traffic Violation Query
 Traffic Violation Query implemented with golang and revel 
 
 English Description
@@ -9,7 +12,7 @@ if you need a sample with limited but runnable features to practice knowledge on
 or
 if you need customize some existing golang code to realize your requirement 
 
-**That is it!:sparkles:**
+**That is it! :sparkles:**
 
 ####Context
 1.traffic violation query
@@ -84,6 +87,9 @@ http://localhost:9000
 > > 2. edit and manage truck information by GUI
 > > 3. etc...
 
+#交通违章查询
+用golang和revel框架实现的交通违章查询应用 
+
 中文描述
 -------
 ####适用者
@@ -91,7 +97,7 @@ http://localhost:9000
 或者
 如果你想利用一个现成的违章查询程序，实现个人特定的需求 
 
-**这个应用就是你需要的！它值得你花些时间研究一番！:sparkles:**
+**这个应用就是你需要的！它值得你花些时间研究一番！:sp arkles:**
 
 ####背景
 1. 实现交通违章的（半）自动化查询
