@@ -8,10 +8,12 @@
 ----------------
 ####适用者
 如果你需要一个功能有限但可执行的代码，用于go语言和web框架的学习
+
 或者
+
 如果你想利用一个现成的违章查询程序，实现个人特定的需求 
 
-**这个应用就是你需要的！它值得你花些时间研究一番! :sp arkles:**
+**这个应用就是你需要的！它值得你花些时间研究一番!** :sparkles:
 
 ####背景
 1. 实现交通违章的（半）自动化查询
@@ -51,29 +53,45 @@ http://localhost:9000
 
 ####关键（可定制）信息
 - 预查询违章信息的车辆信息 
-	文件位置: 
-		github.com/zkcode/TrafficViolation/data/trucks.csv
 
-	数据结构（csv格式）:
-		车牌号,车辆类型,车辆识别代码,机动车登记证书编号,发动机编号,类别
-		A69991,01,LGAGDKVF053014530,440008111023,EQB2102069346179,主车
-		AC2020,01,LFWNDULD461F05985,440008156039,CA6DE22201163022,主车
+文件位置: 
+
+	github.com/zkcode/TrafficViolation/data/trucks.csv
+
+数据结构（csv格式）:
+
+	车牌号,车辆类型,车辆识别代码,机动车登记证书编号,发动机编号,类别
+
+	A69991,01,LGAGDKVF053014530,440008111023,EQB2102069346179,主车
+
+	AC2020,01,LFWNDULD461F05985,440008156039,CA6DE22201163022,主车
 
 - 提供交通违章查询的公共服务网站（本应用基于中国广东省的某个网站完成。如果访问其他的服务网站，需要根据对方网站的页面数据结构，调整应用的代码）
-	基本网址:
+	
+基本网址:
+
 		http://210.76.69.58/wfcx/query.jsp		
 
 - web http communication
+
 	文件:
+
 		github.com/zkcode/TrafficViolation/data/getImageCookies.txt
+
 	目的:
+
 		用于解析直接访问公共服务网站时的通讯信息（测试使用，删除对本应用无影响）
+
 		捕捉第一次获取captcha校验码图片时返回的cookies信息
 
 	文件:
+
 		github.com/zkcode/TrafficViolation/data/queryCookies.txt
+
 	目的:
+
 		用于解析直接访问公共服务网站时的通讯信息（测试使用，删除对本应用无影响）
+
 		捕捉第一次访问query.jsp页面时返回的cookies信息
 
 > ####备注
