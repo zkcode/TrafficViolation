@@ -1,11 +1,10 @@
-English      中文
-=======      ===
+[English][english]      [中文][chinese]
 
 #Traffic Violation Query
 Traffic Violation Query implemented with golang and revel 
 
-English Description
--------------------
+[english]English Description
+----------------------------
 
 ####Audience
 if you need a sample with limited but runnable features to practice knowledge on GoLang and web framework
@@ -90,8 +89,8 @@ http://localhost:9000
 #交通违章查询
 用golang和revel框架实现的交通违章查询应用 
 
-中文描述
--------
+[chinese]中文描述
+----------------
 ####适用者
 如果你需要一个功能有限但可执行的代码，用于go语言和web框架的学习
 或者
