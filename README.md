@@ -68,11 +68,9 @@ http://localhost:9000
 
 - 提供交通违章查询的公共服务网站（本应用基于中国广东省的某个网站完成。如果访问其他的服务网站，需要根据对方网站的页面数据结构，调整应用的代码）
 	
-基本网址:
+	http://210.76.69.58/wfcx/query.jsp		
 
-		http://210.76.69.58/wfcx/query.jsp		
-
-- web http communication
+- web请求&响应文件
 
 	文件:
 
