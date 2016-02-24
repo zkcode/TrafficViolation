@@ -46,43 +46,43 @@ revel run github.com/zkocde/TrafficViolation
 http://localhost:9000
 ```
 
-####key information
+####key Information
 * basic truck information used for query string batch input 
-location: 
-	github.com/zkcode/TrafficViolation/data/trucks.csv
+	location: 
+		github.com/zkcode/TrafficViolation/data/trucks.csv
 
-data structure:
-	车牌号,车辆类型,车辆识别代码,机动车登记证书编号,发动机编号,类别
-	A69991,01,LGAGDKVF053014530,440008111023,EQB2102069346179,主车
-	AC2020,01,LFWNDULD461F05985,440008156039,CA6DE22201163022,主车
+	data structure:
+		车牌号,车辆类型,车辆识别代码,机动车登记证书编号,发动机编号,类别
+		A69991,01,LGAGDKVF053014530,440008111023,EQB2102069346179,主车
+		AC2020,01,LFWNDULD461F05985,440008156039,CA6DE22201163022,主车
 
 * main reference web server for traffic violation query
-location:
-	http://210.76.69.58/wfcx/query.jsp
+	location:
+		http://210.76.69.58/wfcx/query.jsp
 
 * web http communication
-file:
-	github.com/zkcode/TrafficViolation/data/getImageCookies.txt
-purpose:
-	used for parsing communication information when directly connect public service web.
-	capture the cookies information when get first captcha image remotely
+	file:
+		github.com/zkcode/TrafficViolation/data/getImageCookies.txt
+	purpose:
+		used for parsing communication information when directly connect public service web.
+		capture the cookies information when get first captcha image remotely
 
-file:
-	github.com/zkcode/TrafficViolation/data/queryCookies.txt
-purpose:
-	used for parsing communication information when directly connect public service web
-	capture the cookies information when access query.jsp page on public service web
+	file:
+		github.com/zkcode/TrafficViolation/data/queryCookies.txt
+	purpose:
+		used for parsing communication information when directly connect public service web
+		capture the cookies information when access query.jsp page on public service web
 
 > ####Notes:
 > **current code is**
-> 1. good for learning purpose
-> 2. really runnable
-> 3. still can be extenable and optimized
+> > 1. good for learning purpose
+> > 2. really runnable
+> > 3. still can be extenable and optimized
 
 >**curernt code is not**
-> 1. contain more features like query results export etc.
-> 2. edit and manage truck information by GUI
-> 3. etc...
+> > 1. contain more features like query results export etc.>
+> > 2. edit and manage truck information by GUI
+> > 3. etc...
 
 中文描述
 -------
@@ -91,7 +91,7 @@ purpose:
 或者
 如果你想利用一个现成的违章查询程序，实现个人特定的需求 
 
-这个应用就是你需要的！它值得你花些时间研究一番！
+**这个应用就是你需要的！它值得你花些时间研究一番！**
 
 ####背景
 1. 实现交通违章的（半）自动化查询
@@ -106,7 +106,7 @@ purpose:
 3. jquery,bootstrap,jqClock,json,html,JavaScript
 
 ####软件包测试和运行
- 1. 获取revel web框架的代码
+- 获取revel web框架的代码
  	
 ```
 go get github.com/revel/revel
@@ -114,17 +114,23 @@ go get github.com/revel/cmd/revel
 go get github.com/revel/samples (options)
 ```
 
-2. 获取go-httpclient的代码
-```go get github.com/ddliu/go-httpclient```
+- 获取go-httpclient的代码
+```
+go get github.com/ddliu/go-httpclient
+```
 
-3. 执行违章查询应用的服务器端
-```revel run github.com/zkocde/TrafficViolation```
+- 执行违章查询应用的服务器端
+```
+revel run github.com/zkocde/TrafficViolation
+```
 
-4. 执行违章查询的客户端，打开浏览器（最好是firefox或者chrome）, 输入访问地址
-```http://localhost:9000```
+- 执行违章查询的客户端，打开浏览器（最好是firefox或者chrome）, 输入访问地址
+```
+http://localhost:9000
+```
 
 ####关键（可定制）信息
-1. 预查询违章信息的车辆信息 
+- 预查询违章信息的车辆信息 
 	文件位置: 
 		github.com/zkcode/TrafficViolation/data/trucks.csv
 
@@ -133,11 +139,11 @@ go get github.com/revel/samples (options)
 		A69991,01,LGAGDKVF053014530,440008111023,EQB2102069346179,主车
 		AC2020,01,LFWNDULD461F05985,440008156039,CA6DE22201163022,主车
 
-2. 提供交通违章查询的公共服务网站（本应用基于中国广东省的某个网站完成。如果访问其他的服务网站，需要根据对方网站的页面数据结构，调整应用的代码）
+- 提供交通违章查询的公共服务网站（本应用基于中国广东省的某个网站完成。如果访问其他的服务网站，需要根据对方网站的页面数据结构，调整应用的代码）
 	基本网址:
 		http://210.76.69.58/wfcx/query.jsp		
 
-3. web http communication
+- web http communication
 	文件:
 		github.com/zkcode/TrafficViolation/data/getImageCookies.txt
 	目的:
@@ -152,11 +158,11 @@ go get github.com/revel/samples (options)
 
 > ####备注
 > **当前代码的确可以**
-> 1. 用于学习目的
-> 2. 真实可运行
-> 3. 根据需要被扩展和优化
+> > 1. 用于学习目的
+> > 2. 真实可运行
+> > 3. 根据需要被扩展和优化
 
 > **当前代码的确没有***
-> 1. 包含更多的特性，例如查询结果的导出
-> 2. 通过前段界面完成被查询车辆信息的编辑
-> 3. 等等...
+> > 1. 包含更多的特性，例如查询结果的导出
+> > 2. 通过前段界面完成被查询车辆信息的编辑
+> > 3. 等等...
