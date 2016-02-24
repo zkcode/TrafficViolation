@@ -9,7 +9,7 @@ if you need a sample with limited but runnable features to practice knowledge on
 or
 if you need customize some existing golang code to realize your requirement 
 
-**That is it!**
+**That is it!:sparkles:**
 
 ####Context
 1.traffic violation query
@@ -48,7 +48,7 @@ http://localhost:9000
 
 ####key Information
 * basic truck information used for query string batch input 
-	location: 
+	location:
 		github.com/zkcode/TrafficViolation/data/trucks.csv
 
 	data structure:
@@ -91,7 +91,7 @@ http://localhost:9000
 或者
 如果你想利用一个现成的违章查询程序，实现个人特定的需求 
 
-**这个应用就是你需要的！它值得你花些时间研究一番！**
+**这个应用就是你需要的！它值得你花些时间研究一番！:sparkles:**
 
 ####背景
 1. 实现交通违章的（半）自动化查询
@@ -121,7 +121,7 @@ go get github.com/ddliu/go-httpclient
 
 - 执行违章查询应用的服务器端
 ```
-revel run github.com/zkocde/TrafficViolation
+revel run github.com/zkcode/TrafficViolation
 ```
 
 - 执行违章查询的客户端，打开浏览器（最好是firefox或者chrome）, 输入访问地址
@@ -162,7 +162,7 @@ http://localhost:9000
 > > 2. 真实可运行
 > > 3. 根据需要被扩展和优化
 
-> **当前代码的确没有***
+> **当前代码的确没有**
 > > 1. 包含更多的特性，例如查询结果的导出
 > > 2. 通过前段界面完成被查询车辆信息的编辑
 > > 3. 等等...
