@@ -18,10 +18,10 @@ if you need customize some existing golang code to realize your requirement
 **That is it! :sparkles:**
 
 ####Context
-1.traffic violation query
-2.handreds of trucks to query 
-3.when submit query, one dynamic captcha code have to be recognized and filled manually
-4.data source is owned by other organization, any query have to be relied on remotely parameters sending and result fetching
+1. traffic violation query
+2. handreds of trucks to query 
+3. when submit query, one dynamic captcha code have to be recognized and filled manually
+4. data source is owned by other organization, any query have to be relied on remotely parameters sending and result fetching
 
 
 ####Involved Code or Package
@@ -54,29 +54,45 @@ http://localhost:9000
 
 ####key Information
 * basic truck information used for query string batch input 
+
 	location:
+
 		github.com/zkcode/TrafficViolation/data/trucks.csv
 
 	data structure:
+
 		车牌号,车辆类型,车辆识别代码,机动车登记证书编号,发动机编号,类别
+
 		A69991,01,LGAGDKVF053014530,440008111023,EQB2102069346179,主车
+
 		AC2020,01,LFWNDULD461F05985,440008156039,CA6DE22201163022,主车
 
 * main reference web server for traffic violation query
+
 	location:
+
 		http://210.76.69.58/wfcx/query.jsp
 
 * web http communication
+
 	file:
+
 		github.com/zkcode/TrafficViolation/data/getImageCookies.txt
+
 	purpose:
+
 		used for parsing communication information when directly connect public service web.
+
 		capture the cookies information when get first captcha image remotely
 
 	file:
+
 		github.com/zkcode/TrafficViolation/data/queryCookies.txt
+
 	purpose:
+
 		used for parsing communication information when directly connect public service web
+		
 		capture the cookies information when access query.jsp page on public service web
 
 > ####Notes:
