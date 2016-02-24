@@ -1,0 +1,149 @@
+{{template "header.html" .}} {{set . "title" "GTT-违章查询"}} 
+
+<header class="hero-unit" style="background-color:#A9F16C">
+    <div class="container">
+        <div class="row">
+            <div class="hero-text">
+                <h3 style="text-align: center;">XX 有限公司</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 style="margin-top:10px;margin-bottom:20px;"> <span class="label label-danger">交通违章查询</span></h3>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<div class="container-fluid" style="background-color:#A9F16C">
+    <div class="row">
+        <div class="col-sm-5">
+            <form class="form-horizontal" >
+                <div class="form-group form-group-sm">
+                    <label class="col-sm-6 control-label" for="drvNum">车牌号码(粤):</label>
+
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" id="hphm" name="hphm" placeholder="车牌号码">
+                    </div>
+                </div>
+                <div class="form-group form-group-sm">
+                    <label class="col-sm-6 control-label" for="drvCat">车牌种类:</label>
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" id="hpzl" name="hpzl" placeholder="车牌种类">
+                    </div>
+                </div>
+                <div class="form-group form-group-sm">
+                    <label class="col-sm-6 control-label" for="drvIden">车辆识别代号（后6位）:</label>
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" id="clsbdh" name="clsbdh" placeholder="车辆识别代号">
+                    </div>
+                </div>
+                <div class="form-group form-group-sm">
+                    <label class="col-sm-6 control-label" for="drvEngine">机动车登记证书编号(后7位)：</label>
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" id="djzsbh" name="djzsbh" placeholder="机动车登记证书编号">
+                    </div>
+                </div>
+                <div class="form-group form-group-sm">
+                    <label class="col-sm-6 control-label" for="verifyCode">验证码：</label>
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" id="captcha" name="captcha" placeholder="验证码">
+                    </div>
+                </div>
+<!--                 <div class="form-group form-group-sm">
+                    <label class="col-sm-5" type="control-label">看不清</label>
+                    <div class="col-sm-3">
+                     <img src={{url "Trucks.Image"}} onclick="this.src='{{url "Trucks.Image"}}?random='+Math.random();" alt="get captcha" title="看不清楚？点击换一张图" border="0" class="img-rounded">
+                    </div>
+
+                </div> -->
+            </form>
+        </div>
+
+
+        <div class="col-sm-4" >
+            <div class="panel panel-info">
+                <div class="panel-heading">待查询 - 运输车列表 ({{.TrucksNum}})
+                </div>
+                <div class="panel-body" style="max-height:200px;overflow-y:scroll;">
+                    {{range $index,$ele :=.AllTrucks}} {{if eq $index 0}}
+                    <!--   <input type="hidden" id="empty" value=""> -->
+                    {{else}}
+                    <span class="label label-success" id={{$ele.车牌号}} onclick="setSearch({{.车牌号}})">{{$index}}. {{$ele.类别}} - 车牌号: {{$ele.车牌号}}</span>&nbsp;
+                    <input type="hidden" id="{{.车牌号}}v" value="{{.车牌号}} {{.车辆类型}} {{.车辆识别代码}} {{.机动车登记证书编号}} {{.发动机编号}} {{.类别}}"> {{end}} {{end}}
+                </div>
+            </div>
+                <div class="col-sm-3">
+                     <img src={{url "Trucks.Image"}} onclick="this.src='{{url "Trucks.Image"}}?random='+Math.random();" alt="get captcha" title="看不清楚？点击换一张图" border="0" class="img-rounded">
+                </div>
+
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-primary" id="queryCph" name="queryCph">查询</button>
+            </div>
+        </div>
+
+            <div class="col-sm-2" style="margin-left:20px;">
+                <div class="row">
+                <div id="gttclock">clock</div>
+                </div>
+                <div class="row">
+                <p style="color:#FF3300;margin-top:10px;"><strong>每天00:00 - 02:00, 12:00 - 14:00为数据更新时间，不提供查询服务，敬请原谅！</strong>
+                </p>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" style="background-color:#A9F16C">
+    <div class="row">
+        <div class="col-sm-11">
+            <div class="bs-callout bs-callout-info" >
+                <h4> <span class="label label-info">违章查询结果汇总</span></h4>
+                <p>
+                    <table class="table table-condensed"><!-- id="Sresult" -->
+                        <tr class="info" align="center">
+                            <th>
+                                <h5>车牌号码</h5>
+                            </th>
+                            <th>
+                                <h5>违法时间</h5>
+                            </th>
+                            <th>
+                                <h5>违法地址</h5>
+                            </th>
+                            <th>
+                                <h5>违法行为</h5>
+                            </th>
+                            <th>
+                                <h5>处理标记</h5>
+                            </th>
+                            <th>
+                                <h5>处理机关</h5>
+                            </th>
+                            <th>
+                                <h5>违法处理地址</h5>
+                            </th>
+                        </tr>
+                    </table>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            {{template "flash.html" .}}
+        </div>
+    </div>
+</div>
+
+
+
+{{template "footer.html" .}}

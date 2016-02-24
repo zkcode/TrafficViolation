@@ -1,0 +1,29 @@
+query.jsp at first time
+--------------------------------
+ 
+Remote Address:210.76.69.58:80
+Request URL:http://210.76.69.58/wfcx/query.jsp
+Request Method:GET
+Status Code:200 OK
+
+Request Headersview source
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding:gzip, deflate, sdch
+Accept-Language:zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4
+Cache-Control:no-cache
+Connection:keep-alive
+Cookie:JSESSIONID=00004161ZcJLa5Yxu02ssImIdkU:-1; _gat=1; _ga=GA1.4.1411089208.1422421190
+Host:210.76.69.58
+Pragma:no-cache
+User-Agent:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.91 Safari/537.36
+
+Response Headersview source
+Connection:Keep-Alive
+Content-Language:en-US
+Content-Length:10975
+Content-Type:text/html;charset=UTF-8
+Date:Wed, 28 Jan 2015 15:00:03 GMT
+Keep-Alive:timeout=10
+Server:IBM_HTTP_Server
+Via:1.1 210.76.69.58
+X-Powered-By:Servlet/3.0

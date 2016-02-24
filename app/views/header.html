@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>{{.title}}</title>
+
+    <!--bootstrap-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/jqClock.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--bootstrap-->
+
+    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png"> {{range .moreStyles}}
+    <link rel="stylesheet" type="text/css" href="/public/{{.}}"> {{end}} {{range .moreScripts}}
+    <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{end}}
+
+    <!-- JQuery(necessary for bootstrap's JavaScript plugins) -->
+    <script src="/public/js/jquery-1.11.1.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+
+    <script src="/public/js/jqClock.min.js"></script>
+
+<script>
+$().ready(function(){
+    $.clock.locale={"cn":{"weekdays":["星期一","星期二", "星期三","星期四","星期五","星期六", "星期日"],"months":["1","2","3","4", "5","6","7","8","9","10","11", "12"] }};
+    $("#gttclock").clock({"langSet":"cn"});
+});
+
+</script>
+
+<script type="text/javascript" charset="utf-8" async defer>
+function setSearch(id) {
+    var content = document.getElementById(id + "v").value;
+
+    var str = content.split(" ");
+    var hphm = str[0];
+    var hpzl = str[1];
+    var clsbdh = str[2];
+    var djzsbh = str[3];
+
+    document.getElementById("hphm").value = hphm;
+    document.getElementById("hpzl").value = hpzl;
+    document.getElementById("clsbdh").value = clsbdh.substr(clsbdh.length - 6, 6);
+    document.getElementById("djzsbh").value = djzsbh.substr(djzsbh.length - 7, 7);
+
+    if (document.getElementById(id).className == "label label-danger") {
+        document.getElementById(id).className = "label label-success";
+    } else {
+        document.getElementById(id).className = "label label-danger";
+    }
+    document.getElementById("captcha").focus();
+}
+</script>
+
+<script type="text/template" id="DanderRowTemplate">
+<tr class="danger">
+    <td>
+        <h6>{0}</h6>
+    </td>
+    <td>
+        <h6>{1}</h6>
+    </td>
+    <td>
+        <h6>{2}</h6>
+    </td>
+    <td>
+        <h6>{3}</h6>
+    </td>
+    <td>
+        <h6>{4}</h6>
+    </td>
+    <td>
+        <h6>{5}</h6>
+    </td>
+    <td>
+        <h6>{6}</h6>
+    </td>
+</tr>
+</script>
+
+<script type="text/template" id="whiteTemplate">
+    <tr bgcolor="white">
+        <td>
+            <h6>{0}</h6>
+        </td>
+        <td colspan="7" style="vertical-align:middle">{1}</td>
+    </tr>
+</script>
+
+
+<script>
+if (!String.prototype.format) {
+  String.prototype.format = function() {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function(match, number) { 
+      return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+      ;
+    });
+  };
+}
+
+function getResult(data) {
+    var rows = [];
+    //$().ready(function() {
+        $(data).find('.zt_listTbody').each(function() {
+            var cells = [];
+            $(this).find('td').each(function() {
+                //alert($(this).html());
+                cells.push($(this).html());
+            });
+            rows.push(cells);
+        });
+        //alert(rows);
+        //alert("length of array:" + rows.length);
+   // });
+    return rows;
+}
+
+function dispResult(data) {
+    var result = getResult(data);
+    //alert(result);
+
+    len = result.length;
+    var m;
+    for (m = 0; m < len; m++) {
+/*        for (n = 0; n < result[0].length; n++) {
+            alert(result[m][n]);
+        }*/
+    var dangerRowTemplate=$("#DanderRowTemplate").html();
+    var dangerRow=dangerRowTemplate.format(result[m][0],result[m][1],result[m][2],result[m][3],result[m][4],result[m][5],result[m][6]);
+    //alert(dangerRow);
+    $("tbody tr:first-child").after(dangerRow);
+    }
+}
+</script>
+
+    <script>
+    $().ready(function() {
+        $("#queryCph").click(function() {
+                $.post({{url "Trucks.SearchJson"}}, {
+                            "hphm": $("#hphm").val(),
+                            "hpzl": $("#hpzl").val(),
+                            "clsbdh": $("#clsbdh").val(),
+                            "djzsbh": $("#djzsbh").val(),
+                            "captcha": $("#captcha").val()
+                        },
+                        function(json) {
+                            var detail = json.detail;
+                            var type = json.type;
+                            if ("fail" == type) {
+                                alert(detail);
+                                if ("查询结果：没有未处理的违法记录"== detail){
+                                	//alert(detail);
+                                	var whiteTemplate=$("#whiteTemplate").html();
+    								var whiteRow=whiteTemplate.format($("#hphm").val(),detail);
+    								//$("tbody").append(whiteRow);
+    								$("tbody tr:first-child").after(whiteRow);
+                                }
+                                $("#captcha").focus();
+                                $("#captcha").val("");
+                                $('.img-rounded').attr('src', '{{url "Trucks.Image"}}?random=' + Math.random());
+                            } else if ("success" == type) {
+                            	//alert(detail);
+                            	alert("****** 查到违法记录！******")
+                                $.get(
+                                	{{url "Trucks.Res"}}, 
+                                	{},
+                                    function(html){
+                                    	//alert(html);
+                                    		dispResult(html);
+                                            $("#captcha").focus();
+                                            $("#captcha").val("");
+                                            $('.img-rounded').attr('src', 'http://localhost:9000/Image?random=' + Math.random());
+                                   				 },
+                                    "html"
+                            		);
+                       		}
+                    },
+                    "json"
+            );
+        });
+    });
+    </script>
+
+    <!--     <script>
+        $().ready(function() {
+            $("#queryCph").click(function() {
+                  $.post(
+                       // "_queryCph.jsp", {
+                        "http://210.76.69.58/wfcx/_queryCph.jsp", {
+                            "hphm": $("#hphm").val(),
+                            "hpzl": $("#hpzl").val(),
+                            "clsbdh": $("#clsbdh").val(),
+                            "djzsbh": $("#djzsbh").val(),
+                            "captcha": $("#cphValidateCode").val()
+                        },
+                        function(json) {
+                            var detail = json.detail;
+                            var type = json.type;
+                            if ("success" == type) {
+                                alert("success!")
+                                location.href = "http://210.76.69.58/wfcx/cphResultList.jsp";
+                            } else if ("fail" == type) {
+                                //$(".hidediv").hide();
+                                alert(detail);
+                               // $('.img-rounded').attr('src', 'http://210.76.69.58/wfcx/captcha/_queryCph.jsp?random=' + Math.random());
+                                $('.img-rounded').attr('src','http://localhost:9000/image?random='+Math.random());
+                            }
+                        },
+                        "json"
+                    );
+            });
+        });
+        </script>  -->
+</head>
+
+<style type="text/css">
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.bs-callout-info {
+    border-left-color: #1b809e;
+}
+.bs-callout-info h4 {
+    color: #1b809e;
+    /*    font-size: 18px;*/
+}
+</style>
+
+<body>

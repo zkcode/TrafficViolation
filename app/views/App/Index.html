@@ -1,0 +1,104 @@
+{{set . "title" "GTT-违章查询"}} {{template "header.html" .}}
+
+<header class="hero-unit" style="background-color:#A9F16C">
+    <div class="container">
+        <div class="row">
+            <div class="hero-text">
+                <h3>XX 有限公司</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3> <span class="label label-danger">交通违章查询</span></h3>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">待查询 - 车头列表</div>
+                    <div class="panel-body" style="max-height:200px;overflow-y:scroll;">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-warning">trunk 1</a>
+                            <a href="#" class="list-group-item">trunk 2</a>
+                            <a href="#" class="list-group-item">trunk 3</a>
+                            <a href="#" class="list-group-item">trunk 4</a>
+                            <a href="#" class="list-group-item">trunk 5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-5">
+                <form class="form-horizontal">
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-6 control-label" for="drvNum">车牌号码(粤):</label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" id="trucknum" placeholder="车牌号码">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-6 control-label" for="drvCat">车牌种类:</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" id="category" placeholder="车牌种类">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-6 control-label" for="drvIden">车辆识别代号（后6位）:</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" id="identifier" placeholder="车辆识别代号">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-6 control-label" for="drvEngine">机动车登记证书编号(后7位)：</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" id="enginecode" placeholder="机动车登记证书编号">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-6 control-label" for="verifyCode">验证码：</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" id="verifyCode" placeholder="验证码">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-5" type="control-label"></label>
+                        <div class="col-sm-3">
+                            <img src="http://210.76.69.58/wfcx/captcha/_queryCph.jsp" onclick="this.src='http://210.76.69.58/wfcx/captcha/_queryCph.jsp?random='+Math.random();" alt="get captcha" class="img-rounded">
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="button" class="btn btn-primary">查询</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+           <div class="col-sm-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">待查询 - 拖车列表</div>
+                    <div class="panel-body" style="max-height:200px;overflow-y:scroll;">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-warning">trunk 1</a>
+                            <a href="#" class="list-group-item">trunk 2</a>
+                            <a href="#" class="list-group-item">trunk 3</a>
+                            <a href="#" class="list-group-item">trunk 4</a>
+                            <a href="#" class="list-group-item">trunk 5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            {{template "flash.html" .}}
+        </div>
+    </div>
+</div>
+
+{{template "footer.html" .}}
