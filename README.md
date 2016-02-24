@@ -32,15 +32,21 @@ go get github.com/revel/cmd/revel
 go get github.com/revel/samples (options)
 ```
 2. get go-httpclient code
-```go get github.com/ddliu/go-httpclient```
+```
+go get github.com/ddliu/go-httpclient
+```
 
 3. run traffic violation query
-```revel run github.com/zkocde/TrafficViolation```
+```
+revel run github.com/zkocde/TrafficViolation
+```
 
 4. open brower, input access address
-	```http://localhost:9000```
+```
+http://localhost:9000
+```
 
-####key information:
+####key information
 1. basic truck information used for query string batch input 
 location: 
 	github.com/zkcode/TrafficViolation/data/trucks.csv
@@ -100,7 +106,7 @@ purpose:
 3. jquery,bootstrap,jqClock,json,html,JavaScript
 
 ####软件包测试和运行
- 1. 获取revel web框架的代码
+1. 获取revel web框架的代码
  	
 ```
 go get github.com/revel/revel
