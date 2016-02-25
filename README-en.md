@@ -42,6 +42,11 @@ go get github.com/revel/samples (options)
 go get github.com/ddliu/go-httpclient
 ```
 
+* get application code
+```
+go get github.com/zkcode/TrafficViolation
+```
+
 * run traffic violation query
 ```
 revel run github.com/zkocde/TrafficViolation
@@ -102,6 +107,6 @@ http://localhost:9000
 > > 3. still can be extenable and optimized
 
 >**curernt code is not**
-> > 1. contain more features like query results export etc.>
+> > 1. contain more features like query results export etc.
 > > 2. edit and manage truck information by GUI
 > > 3. etc...
