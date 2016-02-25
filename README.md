@@ -41,6 +41,11 @@ go get github.com/revel/samples (options)
 go get github.com/ddliu/go-httpclient
 ```
 
+- 获取本应用的代码
+```
+go get github.com/zkcode/TrafficViolation
+```
+
 - 执行违章查询应用的服务器端
 ```
 revel run github.com/zkcode/TrafficViolation
