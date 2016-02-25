@@ -88,7 +88,7 @@ http://localhost:9000
 
 		used for parsing communication information when directly connect public service web.
 
-		capture the cookies information when get first captcha image remotely
+		capture the response cookies information when get the captcha code image remotely
 
 	file:
 
@@ -98,7 +98,7 @@ http://localhost:9000
 
 		used for parsing communication information when directly connect public service web
 		
-		capture the cookies information when access query.jsp page on public service web
+		capture the response cookies information when access query.jsp page on public service web
 
 > ####Notes:
 > **current code is**
